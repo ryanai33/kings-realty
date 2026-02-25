@@ -347,18 +347,56 @@ html.js-loaded .reveal-right {
 }
 .philosophy-image {
   position: relative;
-}
-.philosophy-image img {
-  width: 100%; height: 560px; object-fit: cover;
-  display: block;
+  padding: 28px;
+  background: var(--dark-oak);
 }
 .philosophy-image::before {
-  content: ''; position: absolute;
-  top: -20px; left: -20px; right: 20px; bottom: 20px;
-  border: 1px solid var(--gold);
-  opacity: 0.3; z-index: 0;
+  content: '';
+  position: absolute;
+  inset: 10px;
+  border: 1px solid rgba(201,165,84,0.25);
+  pointer-events: none;
+  z-index: 2;
 }
-.philosophy-image img { position: relative; z-index: 1; }
+.philosophy-image::after {
+  content: '';
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(201,165,84,0.12);
+  pointer-events: none;
+  z-index: 2;
+}
+.philosophy-image img {
+  width: 100%; height: 504px; object-fit: cover;
+  display: block;
+  position: relative; z-index: 1;
+}
+.frame-ornament {
+  position: absolute;
+  width: 36px; height: 36px;
+  background: var(--dark-oak);
+  z-index: 3;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-size: 18px; color: var(--gold);
+  opacity: 0.9;
+}
+.frame-ornament--tl { top: 4px; left: 4px; }
+.frame-ornament--tr { top: 4px; right: 4px; }
+.frame-ornament--bl { bottom: 4px; left: 4px; }
+.frame-ornament--br { bottom: 4px; right: 4px; }
+/* Outer frame bars */
+.philosophy-frame {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+  border: 3px solid rgba(201,165,84,0.55);
+  box-shadow:
+    inset 0 0 0 5px rgba(42,21,6,0.6),
+    inset 0 0 0 7px rgba(201,165,84,0.2),
+    inset 0 0 0 10px rgba(42,21,6,0.5),
+    0 0 0 1px rgba(201,165,84,0.2);
+}
 
 /* ── HOW WE WORK ─────────────────────────────────────────────────────────────── */
 .how-we-work {
@@ -387,16 +425,17 @@ html.js-loaded .reveal-right {
 .how-card:hover::before { transform: scaleX(1); }
 .how-number {
   font-family: var(--serif); font-size: 72px; font-weight: 300;
-  color: rgba(201, 165, 84, 0.15); line-height: 1;
+  color: rgba(201, 165, 84, 0.55); line-height: 1;
   margin-bottom: 24px;
+  text-shadow: 0 0 40px rgba(201,165,84,0.15);
 }
 .how-title {
-  font-family: var(--serif); font-size: 26px; font-weight: 400;
+  font-family: var(--serif); font-size: 28px; font-weight: 400;
   color: var(--white); margin-bottom: 16px;
 }
 .how-body {
   font-family: var(--body); font-size: 17px; line-height: 1.8;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.72);
 }
 
 /* ── FEATURED PROPERTY ───────────────────────────────────────────────────────── */
@@ -437,7 +476,8 @@ html.js-loaded .reveal-right {
 .featured-info {
   background: var(--dark-oak);
   padding: 56px 56px;
-  display: flex; flex-direction: column; justify-content: space-between;
+  display: flex; flex-direction: column; justify-content: center;
+  gap: 0;
 }
 .featured-location {
   font-family: var(--display); font-size: 9px; letter-spacing: 0.4em;
@@ -653,7 +693,7 @@ html.js-loaded .reveal-right {
 }
 .testimonial-stars {
   color: var(--gold); font-size: 14px; letter-spacing: 4px;
-  margin-bottom: 24px;
+  margin-bottom: 24px; text-align: center;
 }
 .testimonial-text {
   font-family: var(--body); font-size: 18px; font-style: italic;
@@ -662,16 +702,21 @@ html.js-loaded .reveal-right {
   position: relative; z-index: 1;
 }
 .testimonial-property {
-  font-family: var(--display); font-size: 9px; letter-spacing: 0.3em;
+  font-family: var(--display); font-size: 10px; letter-spacing: 0.3em;
   text-transform: uppercase; color: var(--gold);
-  margin-bottom: 8px;
+  margin-bottom: 8px; text-align: center;
+}
+.testimonial-attribution {
+  border-top: 1px solid rgba(201,165,84,0.2);
+  padding-top: 20px;
+  margin-top: 8px;
 }
 .testimonial-name {
-  font-family: var(--serif); font-size: 19px; color: var(--text-dark);
+  font-family: var(--serif); font-size: 20px; color: var(--text-dark);
+  text-align: center;
 }
 .testimonial-date {
-  font-family: var(--display); font-size: 8px; letter-spacing: 0.2em;
-  text-transform: uppercase; color: var(--text-light); margin-top: 4px;
+  display: none;
 }
 .testimonials-cta { text-align: center; margin-top: 56px; }
 
@@ -966,6 +1011,19 @@ html.js-loaded .reveal-right {
   text-transform: uppercase; color: rgba(255,255,255,0.25);
 }
 
+
+/* ── FEATURED AGENT UNDER GALLERY ──────────────────────────────────────────── */
+.featured-agent-under {
+  display: flex; align-items: center; gap: 16px;
+  background: var(--mahogany);
+  padding: 20px 28px;
+  border-top: 1px solid rgba(201,165,84,0.2);
+}
+.agent-photo-under {
+  width: 52px; height: 52px; border-radius: 50%;
+  object-fit: cover; object-position: top;
+  border: 2px solid rgba(201,165,84,0.5);
+}
 /* ── ENHANCED ANIMATIONS & INTERACTIONS ────────────────────────────────────── */
 .prop-card { transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out); }
 .prop-card:hover { transform: translateY(-8px); box-shadow: 0 40px 80px rgba(42,21,6,0.18); }
@@ -1088,6 +1146,11 @@ html.js-loaded .reveal-right {
       <a href="#register" class="btn-primary" style="margin-top:8px">Join the Register</a>
     </div>
     <div class="philosophy-image reveal-right">
+      <div class="philosophy-frame"></div>
+      <span class="frame-ornament frame-ornament--tl">✦</span>
+      <span class="frame-ornament frame-ornament--tr">✦</span>
+      <span class="frame-ornament frame-ornament--bl">✦</span>
+      <span class="frame-ornament frame-ornament--br">✦</span>
       <img src="images/terrydianadogs.jpg" alt="Terry and Diana King" onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800'">
     </div>
   </div>
@@ -1141,6 +1204,13 @@ html.js-loaded .reveal-right {
           <img class="featured-thumb" src="images/images%252F24198473%252F184596012__1769638105-27743-JP10090.jpg" alt="Outdoor bar" onclick="setFeatured(this.src)" title="Entertainment pavilion">
           <img class="featured-thumb" src="images/images%252F24198472%252F184594809__1769638018-27549-JP19229.jpg" alt="Pool aerial" onclick="setFeatured(this.src)" title="Pool & grounds aerial">
         </div>
+        <div class="featured-agent-under">
+          <img class="agent-photo-under" src="images/terry.png" alt="Terry King">
+          <div>
+            <div style="font-family:var(--serif);font-size:20px;font-weight:500;color:var(--white);">Terry King</div>
+            <div style="font-family:var(--display);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-top:4px;">Principal &nbsp;·&nbsp; 021 484 332</div>
+          </div>
+        </div>
       </div>
       <div class="featured-info">
         <div>
@@ -1170,13 +1240,7 @@ html.js-loaded .reveal-right {
           <p class="featured-price">Price</p>
           <p class="featured-price-val">By Negotiation</p>
           <a href="#register" class="btn-primary" style="display:inline-block; margin-bottom:32px">Request Private Viewing</a>
-          <div class="featured-agent">
-            <img class="agent-photo" src="images/terry.png" alt="Terry King">
-            <div>
-              <div class="agent-info-name" style="font-size:19px;font-weight:500;">Terry King</div>
-              <div class="agent-info-role">Principal &nbsp;·&nbsp; 021 484 332</div>
-            </div>
-          </div>
+
         </div>
       </div>
     </div>
@@ -1360,23 +1424,26 @@ html.js-loaded .reveal-right {
       <div class="testimonial-card reveal">
         <div class="testimonial-stars">★★★★★</div>
         <p class="testimonial-text">"Experience is King. In what must surely be the most challenging market since the GFC, Terry and Diana King have once again proven that experience is everything. The team sold our family home in Remuera with clear and constant communication — we always knew where we were at. We have worked with The Kings for over 12 years on both the buying and selling side, and can confidently say this is the team you need by your side."</p>
+        <div class="testimonial-attribution">
+        <div class="testimonial-attribution">
+        <div class="testimonial-attribution">
         <p class="testimonial-property">Remuera, Auckland</p>
         <p class="testimonial-name">Paul &amp; Eileen Harrison</p>
-        <p class="testimonial-date">Verified Client Review</p>
+        
       </div>
       <div class="testimonial-card reveal">
         <div class="testimonial-stars">★★★★★</div>
         <p class="testimonial-text">"We recently sold our property with The Kings and cannot recommend them highly enough. Their unique approach to selling residential property is exceptional. Our home had been listed with another agent for 6 months with no success. Once The Kings had the listing, it was sold in 3 weeks. They are without a doubt the best in this business."</p>
         <p class="testimonial-property">Remuera, Auckland</p>
         <p class="testimonial-name">Sarah &amp; Donald Reid</p>
-        <p class="testimonial-date">Verified Client Review</p>
+        
       </div>
       <div class="testimonial-card reveal">
         <div class="testimonial-stars">★★★★★</div>
         <p class="testimonial-text">"Thank you Terry and your team for a fantastic result — sold in 2 days at our target price, 30% above CV. Your methodology established the true value of our home, giving confidence to both sides of the transaction. This is what separates The Kings from every other agent in Remuera."</p>
         <p class="testimonial-property">5 Arney Crescent, Remuera</p>
         <p class="testimonial-name">Mike &amp; Andrea Kelly</p>
-        <p class="testimonial-date">Verified Client Review</p>
+        
       </div>
     </div>
     <div class="testimonials-cta reveal">
