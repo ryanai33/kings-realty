@@ -32,7 +32,7 @@
   --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-html { scroll-behavior: smooth; font-size: 17px; }
+html { scroll-behavior: smooth; font-size: 18px; }
 body {
   font-family: var(--body);
   background: var(--ivory);
@@ -100,7 +100,7 @@ html.js-loaded .reveal-right {
   display: flex; flex-direction: column; align-items: center;
 }
 .nav-logo img {
-  height: 52px; filter: brightness(0) invert(1);
+  height: 64px; filter: brightness(0) invert(1);
   transition: opacity 0.3s;
 }
 .nav-links {
@@ -108,8 +108,8 @@ html.js-loaded .reveal-right {
 }
 .nav-links a {
   font-family: var(--display);
-  font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
-  color: rgba(255,255,255,0.8);
+  font-size: 11.5px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
   text-decoration: none;
   transition: color 0.3s;
   position: relative;
@@ -264,7 +264,7 @@ html.js-loaded .reveal-right {
 }
 .stat-val sup { font-size: 20px; vertical-align: super; }
 .stat-label {
-  font-family: var(--display); font-size: 9px; letter-spacing: 0.3em;
+  font-family: var(--display); font-size: 11px; letter-spacing: 0.3em;
   text-transform: uppercase; color: rgba(255,255,255,0.4);
   margin-top: 8px;
 }
@@ -497,7 +497,7 @@ html.js-loaded .reveal-right {
   font-family: var(--serif); font-size: 22px; color: var(--white);
 }
 .agent-info-role {
-  font-family: var(--display); font-size: 10px; letter-spacing: 0.25em;
+  font-family: var(--display); font-size: 12px; letter-spacing: 0.2em;
   text-transform: uppercase; color: var(--gold);
 }
 
@@ -965,6 +965,32 @@ html.js-loaded .reveal-right {
   font-family: var(--display); font-size: 8px; letter-spacing: 0.2em;
   text-transform: uppercase; color: rgba(255,255,255,0.25);
 }
+
+/* ── ENHANCED ANIMATIONS & INTERACTIONS ────────────────────────────────────── */
+.prop-card { transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out); }
+.prop-card:hover { transform: translateY(-8px); box-shadow: 0 40px 80px rgba(42,21,6,0.18); }
+
+.team-card { transition: box-shadow 0.4s, border-bottom 0.4s; border-bottom: 2px solid transparent; }
+.team-card:hover { border-bottom: 2px solid var(--gold); box-shadow: 0 20px 60px rgba(42,21,6,0.14); }
+
+@keyframes shimmer {
+  0% { background-position: -300% center; }
+  100% { background-position: 300% center; }
+}
+
+/* ── LEGIBILITY UPGRADES ────────────────────────────────────────────────────── */
+.ticker-item { font-size: 13px; letter-spacing: 0.18em; }
+.section-eyebrow { font-size: 11px !important; }
+.stat-label { font-size: 12px !important; letter-spacing: 0.2em !important; }
+.footer-col-title { font-size: 12px !important; }
+.footer-links a { font-size: 15px !important; }
+.footer-contact p { font-size: 16px !important; }
+.agent-info-name { font-size: 22px !important; }
+.agent-info-role { font-size: 12px !important; }
+.hero-rule { width: 60px; height: 1px; background: linear-gradient(90deg, var(--gold), transparent); margin: 20px 0 28px; }
+
+/* ── HOW WE WORK card text legibility ──────────────────────────────────────── */
+.how-card-text { font-size: 17px !important; line-height: 1.8 !important; }
 </style>
 </head>
 <body>
@@ -974,7 +1000,7 @@ html.js-loaded .reveal-right {
   <div class="nav-inner">
     <div class="nav-logo">
       <img src="images/kings_logo.png" alt="The Kings of Real Estate" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-      <span style="display:none; font-family:'Cinzel',serif; font-size:13px; letter-spacing:0.15em; color:white; text-transform:uppercase; text-align:center; line-height:1.3">THE KINGS<br><span style="font-size:9px;letter-spacing:0.3em;opacity:0.6">OF REAL ESTATE</span></span>
+      <span style="display:none; font-family:'Cinzel',serif; font-size:18px; letter-spacing:0.18em; color:white; text-transform:uppercase; text-align:center; line-height:1.4">THE KINGS<br><span style="font-size:11px;letter-spacing:0.28em;opacity:0.75">OF REAL ESTATE</span></span>
     </div>
     <ul class="nav-links">
       <li><a href="#properties">Properties</a></li>
@@ -995,7 +1021,6 @@ html.js-loaded .reveal-right {
   <div class="hero-content">
     <h1 class="hero-title">Simply Matching<br><em>People with Property</em></h1>
     <div class="hero-rule"></div>
-    <p class="hero-desc">For four decades, Terry and Diana King have represented some of Auckland's most distinguished homes — with a methodology built on discretion, genuine market knowledge, and the enduring belief that the right buyer already exists.</p>
     <div class="hero-btns">
       <a href="#properties" class="btn-primary">View Current Properties</a>
       <a href="#register" class="btn-outline">Join The Register</a>
@@ -1467,10 +1492,10 @@ html.js-loaded .reveal-right {
     </div>
   </div>
   <div class="footer-social" style="display:flex;gap:20px;justify-content:center;padding:32px 0 8px;border-top:1px solid rgba(201,165,84,0.15);">
-    <a href="https://www.facebook.com/thekingsofrealestate" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.5);font-family:var(--display);font-size:10px;letter-spacing:0.15em;text-decoration:none;text-transform:uppercase;transition:color 0.3s;" onmouseover="this.style.color='#c9a554'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Facebook</a>
-    <a href="https://www.instagram.com/thekingsofrealestate/" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.5);font-family:var(--display);font-size:10px;letter-spacing:0.15em;text-decoration:none;text-transform:uppercase;transition:color 0.3s;" onmouseover="this.style.color='#c9a554'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Instagram</a>
-    <a href="https://nz.linkedin.com/company/thekingsofrealestate" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.5);font-family:var(--display);font-size:10px;letter-spacing:0.15em;text-decoration:none;text-transform:uppercase;transition:color 0.3s;" onmouseover="this.style.color='#c9a554'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">LinkedIn</a>
-    <a href="https://maps.app.goo.gl/remuera-kings" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.5);font-family:var(--display);font-size:10px;letter-spacing:0.15em;text-decoration:none;text-transform:uppercase;transition:color 0.3s;" onmouseover="this.style.color='#c9a554'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Google Reviews</a>
+    <a href="https://www.facebook.com/thekingsofrealestate" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.55);font-family:var(--display);font-size:12px;letter-spacing:0.15em;text-decoration:none;text-transform:uppercase;transition:color 0.3s;" onmouseover="this.style.color='#c9a554'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Facebook</a>
+    <a href="https://www.instagram.com/thekingsofrealestate/" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.55);font-family:var(--display);font-size:12px;letter-spacing:0.15em;text-decoration:none;text-transform:uppercase;transition:color 0.3s;" onmouseover="this.style.color='#c9a554'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Instagram</a>
+    <a href="https://nz.linkedin.com/company/thekingsofrealestate" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.55);font-family:var(--display);font-size:12px;letter-spacing:0.15em;text-decoration:none;text-transform:uppercase;transition:color 0.3s;" onmouseover="this.style.color='#c9a554'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">LinkedIn</a>
+    <a href="https://maps.app.goo.gl/remuera-kings" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.55);font-family:var(--display);font-size:12px;letter-spacing:0.15em;text-decoration:none;text-transform:uppercase;transition:color 0.3s;" onmouseover="this.style.color='#c9a554'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Google Reviews</a>
   </div>
   <div class="footer-bottom">
     <p>© 2026 The Kings of Real Estate · All offices licensed under the Real Estate Agents Act 2008</p>
@@ -1670,33 +1695,7 @@ function hideTyping() {
 }
 
 // ── COUNTER ANIMATION ─────────────────────────────────────────────────────────
-function animateCounter(el) {
-  const target = parseInt(el.dataset.target);
-  const suffix = el.dataset.suffix || '';
-  const duration = 2000;
-  const start = performance.now();
-  const step = (now) => {
-    const progress = Math.min((now - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    el.textContent = Math.floor(eased * target) + suffix;
-    if (progress < 1) requestAnimationFrame(step);
-  };
-  requestAnimationFrame(step);
-}
-const counterObs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { animateCounter(e.target); counterObs.unobserve(e.target); } });
-}, { threshold: 0.5 });
-document.querySelectorAll('.counter').forEach(el => counterObs.observe(el));
 
-// ── FEATURED GALLERY ─────────────────────────────────────────────────────────
-function setFeatured(src) {
-  document.querySelector('.featured-main-img').src = src;
-  document.querySelectorAll('.featured-thumb').forEach(t => {
-    const match = t.src === src || t.getAttribute('src') === src;
-    t.style.outline = match ? '2px solid var(--gold)' : 'none';
-    t.style.opacity = match ? '1' : '0.7';
-  });
-}
 </script>
 </body>
 </html>
