@@ -32,7 +32,7 @@
   --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; font-size: 17px; }
 body {
   font-family: var(--body);
   background: var(--ivory);
@@ -152,10 +152,10 @@ html.js-loaded .reveal-right {
 .hero-overlay {
   position: absolute; inset: 0;
   background: linear-gradient(
-    135deg,
-    rgba(42, 21, 6, 0.82) 0%,
-    rgba(42, 21, 6, 0.5) 50%,
-    rgba(42, 21, 6, 0.3) 100%
+    160deg,
+    rgba(15, 8, 2, 0.52) 0%,
+    rgba(15, 8, 2, 0.22) 50%,
+    rgba(15, 8, 2, 0.06) 100%
   );
 }
 .hero-content {
@@ -232,25 +232,7 @@ html.js-loaded .reveal-right {
 }
 .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
 
-/* Hero scroll indicator */
-.hero-scroll {
-  position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
-  z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 8px;
-  opacity: 0; animation: fadeIn 1s var(--ease) 2s forwards;
-}
-.hero-scroll span {
-  font-family: var(--display); font-size: 8px; letter-spacing: 0.4em;
-  text-transform: uppercase; color: rgba(255,255,255,0.4);
-}
-.scroll-line {
-  width: 1px; height: 50px;
-  background: linear-gradient(180deg, rgba(201,165,84,0.8), transparent);
-  animation: scrollPulse 2s ease-in-out infinite;
-}
-@keyframes scrollPulse {
-  0%, 100% { opacity: 0.4; transform: scaleY(1); }
-  50% { opacity: 1; transform: scaleY(1.2); }
-}
+
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(30px); }
@@ -436,12 +418,12 @@ html.js-loaded .reveal-right {
 }
 .featured-layout:hover .featured-main-img { transform: scale(1.04); }
 .featured-thumbs {
-  display: grid; grid-template-columns: repeat(8, 1fr); gap: 3px;
+  display: grid; grid-template-columns: repeat(8, 1fr); gap: 4px;
   background: var(--dark-oak);
 }
 .featured-thumb {
-  height: 90px; object-fit: cover; display: block;
-  cursor: pointer; opacity: 0.65; transition: opacity 0.3s, transform 0.2s;
+  height: 110px; object-fit: cover; display: block;
+  cursor: pointer; opacity: 0.7; transition: opacity 0.3s, transform 0.2s;
 }
 .featured-thumb:hover { opacity: 1; transform: scale(1.03); }
 .featured-thumb:hover { opacity: 1; }
@@ -507,15 +489,15 @@ html.js-loaded .reveal-right {
   border-top: 1px solid rgba(201, 165, 84, 0.15);
 }
 .agent-photo {
-  width: 56px; height: 56px; border-radius: 50%;
+  width: 64px; height: 64px; border-radius: 50%;
   object-fit: cover; object-position: top;
   border: 2px solid rgba(201, 165, 84, 0.4);
 }
 .agent-info-name {
-  font-family: var(--serif); font-size: 18px; color: var(--white);
+  font-family: var(--serif); font-size: 22px; color: var(--white);
 }
 .agent-info-role {
-  font-family: var(--display); font-size: 8px; letter-spacing: 0.25em;
+  font-family: var(--display); font-size: 10px; letter-spacing: 0.25em;
   text-transform: uppercase; color: var(--gold);
 }
 
@@ -721,24 +703,24 @@ html.js-loaded .reveal-right {
   padding: 40px 32px 32px;
 }
 .team-name {
-  font-family: var(--serif); font-size: 28px; font-weight: 300;
-  color: var(--white); margin-bottom: 4px;
+  font-family: var(--serif); font-size: 34px; font-weight: 300;
+  color: var(--white); margin-bottom: 6px;
 }
 .team-role {
-  font-family: var(--display); font-size: 9px; letter-spacing: 0.3em;
+  font-family: var(--display); font-size: 11px; letter-spacing: 0.3em;
   text-transform: uppercase; color: var(--gold);
 }
 .team-body { padding: 32px; }
 .team-bio {
-  font-family: var(--body); font-size: 16px; line-height: 1.75;
+  font-family: var(--body); font-size: 18px; line-height: 1.75;
   color: var(--text-mid); margin-bottom: 24px;
 }
 .team-contact {
   display: flex; gap: 12px; flex-wrap: wrap;
 }
 .team-btn {
-  font-family: var(--display); font-size: 8px; letter-spacing: 0.2em;
-  text-transform: uppercase; padding: 10px 20px;
+  font-family: var(--display); font-size: 11px; letter-spacing: 0.18em;
+  text-transform: uppercase; padding: 12px 24px;
   border: 1px solid var(--gold); color: var(--warm-brown);
   text-decoration: none; transition: all 0.3s;
   display: inline-block;
@@ -1011,9 +993,7 @@ html.js-loaded .reveal-right {
   <div class="hero-bg" id="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <p class="hero-eyebrow">Remuera · Auckland · Est. 1984</p>
     <h1 class="hero-title">Simply Matching<br><em>People with Property</em></h1>
-    <p class="hero-subtitle">The Kings of Real Estate &nbsp;·&nbsp; Remuera's Most Trusted Name</p>
     <div class="hero-rule"></div>
     <p class="hero-desc">For four decades, Terry and Diana King have represented some of Auckland's most distinguished homes — with a methodology built on discretion, genuine market knowledge, and the enduring belief that the right buyer already exists.</p>
     <div class="hero-btns">
@@ -1021,10 +1001,7 @@ html.js-loaded .reveal-right {
       <a href="#register" class="btn-outline">Join The Register</a>
     </div>
   </div>
-  <div class="hero-scroll">
-    <div class="scroll-line"></div>
-    <span>Scroll</span>
-  </div>
+
 </section>
 
 <!-- ── STATS BAR ─────────────────────────────────────────────────────────────── -->
@@ -1039,7 +1016,7 @@ html.js-loaded .reveal-right {
       <div class="stat-label">Achieve Asking Price</div>
     </div>
     <div class="stat-item reveal">
-      <div class="stat-val"><span class="counter" data-target="500" data-suffix="+">0</span></div>
+      <div class="stat-val"><span class="counter" data-target="70" data-suffix="+">0</span></div>
       <div class="stat-label">Properties Sold</div>
     </div>
     <div class="stat-item reveal">
@@ -1080,13 +1057,13 @@ html.js-loaded .reveal-right {
       <p class="philosophy-body">Our methodology is fundamentally different from franchise agencies. While others ask the market what it will pay, we establish the true value of your property first — then find the buyer who recognises and shares that valuation.</p>
       <blockquote class="philosophy-quote">
         <p>"The majority of homes we represent sell for the asking price. Not because we're fortunate — but because we take the time to find the right buyer."</p>
-        <cite>Terry King · Principal</cite>
+        <cite>Terry King · Principal, The Kings of Real Estate</cite>
       </blockquote>
       <p class="philosophy-body">This patient, principled approach has earned the trust of Remuera's most discerning families for over four decades. We maintain a private register of qualified buyers — often meaning your home is sold before it ever reaches the open market.</p>
       <a href="#register" class="btn-primary" style="margin-top:8px">Join the Register</a>
     </div>
     <div class="philosophy-image reveal-right">
-      <img src="images/kingsteam_shot.jpg" alt="Terry, Diana and the Kings team" onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800'">
+      <img src="images/terrydianadogs.jpg" alt="Terry and Diana King" onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800'">
     </div>
   </div>
 </section>
@@ -1134,10 +1111,10 @@ html.js-loaded .reveal-right {
           <img class="featured-thumb" src="images/remuera%20driveway.jpg" alt="Driveway" onclick="setFeatured(this.src)" title="Entrance">
           <img class="featured-thumb" src="images/remuara%20hall.jpg" alt="Interior hall" onclick="setFeatured(this.src)" title="Grand hallway">
           <img class="featured-thumb" src="images/remuera%20tennis.jpg" alt="Tennis court" onclick="setFeatured(this.src)" title="Tennis court">
-          <img class="featured-thumb" src="images/images%2F24198466%2F183658687__1769041911-47566-JP10183.jpg" alt="Living room" onclick="setFeatured(this.src)" title="Formal living">
-          <img class="featured-thumb" src="images/images%2F24277270%2F186470956__1770762053-29282-JP10457.jpg" alt="Grand salon" onclick="setFeatured(this.src)" title="Grand salon">
-          <img class="featured-thumb" src="images/images%2F24198473%2F184596012__1769638105-27743-JP10090.jpg" alt="Outdoor bar" onclick="setFeatured(this.src)" title="Entertainment pavilion">
-          <img class="featured-thumb" src="images/images%2F24198472%2F184594809__1769638018-27549-JP19229.jpg" alt="Pool aerial" onclick="setFeatured(this.src)" title="Pool & grounds aerial">
+          <img class="featured-thumb" src="images/images%252F24198466%252F183658687__1769041911-47566-JP10183.jpg" alt="Living room" onclick="setFeatured(this.src)" title="Formal living">
+          <img class="featured-thumb" src="images/images%252F24277270%252F186470956__1770762053-29282-JP10457.jpg" alt="Grand salon" onclick="setFeatured(this.src)" title="Grand salon">
+          <img class="featured-thumb" src="images/images%252F24198473%252F184596012__1769638105-27743-JP10090.jpg" alt="Outdoor bar" onclick="setFeatured(this.src)" title="Entertainment pavilion">
+          <img class="featured-thumb" src="images/images%252F24198472%252F184594809__1769638018-27549-JP19229.jpg" alt="Pool aerial" onclick="setFeatured(this.src)" title="Pool & grounds aerial">
         </div>
       </div>
       <div class="featured-info">
@@ -1169,9 +1146,9 @@ html.js-loaded .reveal-right {
           <p class="featured-price-val">By Negotiation</p>
           <a href="#register" class="btn-primary" style="display:inline-block; margin-bottom:32px">Request Private Viewing</a>
           <div class="featured-agent">
-            <img class="agent-photo" src="images/kingsteam_shot.jpg" alt="Terry King" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200'">
+            <img class="agent-photo" src="images/terry.png" alt="Terry King">
             <div>
-              <div class="agent-info-name">Terry King</div>
+              <div class="agent-info-name" style="font-size:19px;font-weight:500;">Terry King</div>
               <div class="agent-info-role">Principal &nbsp;·&nbsp; 021 484 332</div>
             </div>
           </div>
@@ -1192,7 +1169,7 @@ html.js-loaded .reveal-right {
       <div class="prop-card reveal">
         <div class="prop-img-wrap">
           <span class="prop-status prop-status--sale">For Sale</span>
-          <img class="prop-img" src="images/remuera%20hero.jpg" alt="153 Victoria Avenue" onerror="this.src='https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800'">
+          <img class="prop-img" src="images/victoria.jpg" alt="153 Victoria Avenue" onerror="this.src='https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800'">
         </div>
         <div class="prop-body">
           <h3 class="prop-address">153 Victoria Avenue</h3>
@@ -1209,7 +1186,7 @@ html.js-loaded .reveal-right {
       <div class="prop-card reveal">
         <div class="prop-img-wrap">
           <span class="prop-status prop-status--sold">Recently Sold</span>
-          <img class="prop-img" src="images/remuera%20lawn.jpg" alt="5 Arney Crescent" onerror="this.src='https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800'">
+          <img class="prop-img" src="images/5arney.jpg" alt="5 Arney Crescent" onerror="this.src='https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800'">
         </div>
         <div class="prop-body">
           <h3 class="prop-address">5 Arney Crescent</h3>
@@ -1226,12 +1203,12 @@ html.js-loaded .reveal-right {
       <div class="prop-card reveal">
         <div class="prop-img-wrap">
           <span class="prop-status prop-status--sold">Recently Sold</span>
-          <img class="prop-img" src="images/remuera%20driveway.jpg" alt="47 Bassett Road" onerror="this.src='https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800'">
+          <img class="prop-img" src="images/lingarth.jpg" alt="65 Lingarth Street" onerror="this.src='https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800'">
         </div>
         <div class="prop-body">
-          <h3 class="prop-address">47 Bassett Road</h3>
+          <h3 class="prop-address">65 Lingarth Street</h3>
           <p class="prop-suburb">Remuera · Auckland</p>
-          <p class="prop-desc">A distinguished Remuera classic with sweeping views, formal gardens, and all-day sun. Sold off-market to a register buyer.</p>
+          <p class="prop-desc">A landmark Remuera residence of timeless Georgian character. Sold privately to a register buyer within days of listing — without public marketing.</p>
           <div class="prop-meta">
             <span class="prop-meta-item">6 Bed</span>
             <span class="prop-meta-item">5 Bath</span>
@@ -1253,14 +1230,14 @@ html.js-loaded .reveal-right {
       <h2 class="section-title section-title--light">Inside the <em>Estate</em></h2>
     </div>
     <div style="display:grid; grid-template-columns: repeat(4,1fr); gap:3px;" class="reveal">
-      <img src="images/images%2F24277270%2F186470956__1770762053-29282-JP10457.jpg" alt="Grand salon" style="width:100%;height:280px;object-fit:cover;display:block;transition:transform 0.4s;cursor:pointer;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-      <img src="images/images%2F24198466%2F183658687__1769041911-47566-JP10183.jpg" alt="Formal living" style="width:100%;height:280px;object-fit:cover;display:block;transition:transform 0.4s;cursor:pointer;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="images/images%252F24277270%252F186470956__1770762053-29282-JP10457.jpg" alt="Grand salon" style="width:100%;height:280px;object-fit:cover;display:block;transition:transform 0.4s;cursor:pointer;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="images/images%252F24198466%252F183658687__1769041911-47566-JP10183.jpg" alt="Formal living" style="width:100%;height:280px;object-fit:cover;display:block;transition:transform 0.4s;cursor:pointer;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
       <img src="images/remuara%20hall.jpg" alt="Hallway" style="width:100%;height:280px;object-fit:cover;display:block;transition:transform 0.4s;cursor:pointer;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-      <img src="images/images%2F24198473%2F184596012__1769638105-27743-JP10090.jpg" alt="Entertainment pavilion" style="width:100%;height:280px;object-fit:cover;display:block;transition:transform 0.4s;cursor:pointer;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="images/images%252F24198473%252F184596012__1769638105-27743-JP10090.jpg" alt="Entertainment pavilion" style="width:100%;height:280px;object-fit:cover;display:block;transition:transform 0.4s;cursor:pointer;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
       <img src="images/remuera%20tennis.jpg" alt="Tennis court" style="width:100%;height:280px;object-fit:cover;display:block;transition:transform 0.4s;cursor:pointer;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-      <img src="images/images%2F24198472%2F184594809__1769638018-27549-JP19229.jpg" alt="Pool aerial" style="width:100%;height:280px;object-fit:cover;display:block;transition:transform 0.4s;cursor:pointer;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-      <img src="images/images%2F24198475%2F184596164__1769638117-14779-JP10156.jpg" alt="Courtyard door" style="width:100%;height:280px;object-fit:cover;display:block;transition:transform 0.4s;cursor:pointer;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-      <img src="images/remuera%20driveway.jpg" alt="Entrance" style="width:100%;height:280px;object-fit:cover;display:block;transition:transform 0.4s;cursor:pointer;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="images/images%252F24198472%252F184594809__1769638018-27549-JP19229.jpg" alt="Pool aerial" style="width:100%;height:280px;object-fit:cover;display:block;transition:transform 0.4s;cursor:pointer;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="images/images%252F24198475%252F184596164__1769638117-14779-JP10156.jpg" alt="Courtyard door" style="width:100%;height:280px;object-fit:cover;display:block;transition:transform 0.4s;cursor:pointer;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="images/images%252F24198444%252F184591911__1769637425-26206-JP18950.jpg" alt="Main entrance" style="width:100%;height:280px;object-fit:cover;display:block;transition:transform 0.4s;cursor:pointer;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
     </div>
     <div style="text-align:center;margin-top:48px" class="reveal">
       <a href="#register" class="btn-primary">Request Private Viewing of This Property</a>
@@ -1357,24 +1334,24 @@ html.js-loaded .reveal-right {
     <div class="testimonials-grid">
       <div class="testimonial-card reveal">
         <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"Terry, thank you and your team for a fantastic result — sold in 2 days for our target price, 30% above CV. Your selling process established the real value which gave confidence to both the buyer and the seller."</p>
+        <p class="testimonial-text">"Experience is King. In what must surely be the most challenging market since the GFC, Terry and Diana King have once again proven that experience is everything. The team sold our family home in Remuera with clear and constant communication — we always knew where we were at. We have worked with The Kings for over 12 years on both the buying and selling side, and can confidently say this is the team you need by your side."</p>
+        <p class="testimonial-property">Remuera, Auckland</p>
+        <p class="testimonial-name">Paul &amp; Eileen Harrison</p>
+        <p class="testimonial-date">Verified Client Review</p>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"We recently sold our property with The Kings and cannot recommend them highly enough. Their unique approach to selling residential property is exceptional. Our home had been listed with another agent for 6 months with no success. Once The Kings had the listing, it was sold in 3 weeks. They are without a doubt the best in this business."</p>
+        <p class="testimonial-property">Remuera, Auckland</p>
+        <p class="testimonial-name">Sarah &amp; Donald Reid</p>
+        <p class="testimonial-date">Verified Client Review</p>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Thank you Terry and your team for a fantastic result — sold in 2 days at our target price, 30% above CV. Your methodology established the true value of our home, giving confidence to both sides of the transaction. This is what separates The Kings from every other agent in Remuera."</p>
         <p class="testimonial-property">5 Arney Crescent, Remuera</p>
         <p class="testimonial-name">Mike &amp; Andrea Kelly</p>
-        <p class="testimonial-date">November 2025</p>
-      </div>
-      <div class="testimonial-card reveal">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"Terry made the process of selling my apartment seamless. His calm and methodical approach made the experience a delight. He went above and beyond and exceeded all expectations, achieving a fantastic result."</p>
-        <p class="testimonial-property">8a/416 Remuera Road</p>
-        <p class="testimonial-name">Joan Henderson</p>
-        <p class="testimonial-date">September 2025</p>
-      </div>
-      <div class="testimonial-card reveal">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"Terry and Diana were absolutely professional in selling our much-loved family home. Their communication and advice throughout was excellent. We highly recommend The Kings for their honesty and professionalism."</p>
-        <p class="testimonial-property">153 Victoria Avenue, Remuera</p>
-        <p class="testimonial-name">Liz Miller</p>
-        <p class="testimonial-date">August 2025</p>
+        <p class="testimonial-date">Verified Client Review</p>
       </div>
     </div>
     <div class="testimonials-cta reveal">
@@ -1394,7 +1371,7 @@ html.js-loaded .reveal-right {
     <div class="team-grid">
       <div class="team-card reveal">
         <div class="team-photo-wrap">
-          <img class="team-photo" src="images/kingsteam_shot.jpg" alt="Terry King" style="object-position:20% top;" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600'">
+          <img class="team-photo" src="images/terry.png" alt="Terry King" style="object-position:center top;" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600'">
           <div class="team-overlay">
             <h3 class="team-name">Terry King</h3>
             <p class="team-role">Principal &amp; Licensed Agent</p>
@@ -1410,7 +1387,7 @@ html.js-loaded .reveal-right {
       </div>
       <div class="team-card reveal">
         <div class="team-photo-wrap">
-          <img class="team-photo" src="images/kingsteam_shot.jpg" alt="Diana King" style="object-position:50% top;" onerror="this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600'">
+          <img class="team-photo" src="images/diana.png" alt="Diana King" style="object-position:center top;" onerror="this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600'">
           <div class="team-overlay">
             <h3 class="team-name">Diana King</h3>
             <p class="team-role">Associate Principal</p>
@@ -1426,17 +1403,17 @@ html.js-loaded .reveal-right {
       </div>
       <div class="team-card reveal">
         <div class="team-photo-wrap">
-          <img class="team-photo" src="images/kingsteam_shot.jpg" alt="The Kings Team" style="object-position:80% top;" onerror="this.src='https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=600'">
+          <img class="team-photo" src="images/ali.png" alt="Ali" style="object-position:center top;" onerror="this.src='https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=600'">
           <div class="team-overlay">
-            <h3 class="team-name">The Kings Team</h3>
-            <p class="team-role">Support &amp; Administration</p>
+            <h3 class="team-name">Ali</h3>
+            <p class="team-role">Client Services &amp; Register</p>
           </div>
         </div>
         <div class="team-body">
-          <p class="team-bio">Behind every seamless transaction is a dedicated support team committed to the same standards of excellence that Terry and Diana have built this practice upon. Available to assist with enquiries, viewings and register management.</p>
+          <p class="team-bio">Ali is the heart of The Kings' day-to-day operations, ensuring every client interaction reflects the same standard of discretion and professionalism that defines this practice. Available to assist with enquiries, viewings and register management.</p>
           <div class="team-contact">
-            <a href="tel:021484332" class="team-btn">Contact Us</a>
-            <a href="mailto:info@thekings.co.nz" class="team-btn">Email</a>
+            <a href="tel:0495290000" class="team-btn">+64 9 529 0000</a>
+            <a href="mailto:ali@thekings.co.nz" class="team-btn">Email Ali</a>
           </div>
         </div>
       </div>
@@ -1489,6 +1466,12 @@ html.js-loaded .reveal-right {
       </ul>
     </div>
   </div>
+  <div class="footer-social" style="display:flex;gap:20px;justify-content:center;padding:32px 0 8px;border-top:1px solid rgba(201,165,84,0.15);">
+    <a href="https://www.facebook.com/thekingsofrealestate" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.5);font-family:var(--display);font-size:10px;letter-spacing:0.15em;text-decoration:none;text-transform:uppercase;transition:color 0.3s;" onmouseover="this.style.color='#c9a554'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Facebook</a>
+    <a href="https://www.instagram.com/thekingsofrealestate/" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.5);font-family:var(--display);font-size:10px;letter-spacing:0.15em;text-decoration:none;text-transform:uppercase;transition:color 0.3s;" onmouseover="this.style.color='#c9a554'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Instagram</a>
+    <a href="https://nz.linkedin.com/company/thekingsofrealestate" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.5);font-family:var(--display);font-size:10px;letter-spacing:0.15em;text-decoration:none;text-transform:uppercase;transition:color 0.3s;" onmouseover="this.style.color='#c9a554'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">LinkedIn</a>
+    <a href="https://maps.app.goo.gl/remuera-kings" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.5);font-family:var(--display);font-size:10px;letter-spacing:0.15em;text-decoration:none;text-transform:uppercase;transition:color 0.3s;" onmouseover="this.style.color='#c9a554'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Google Reviews</a>
+  </div>
   <div class="footer-bottom">
     <p>© 2026 The Kings of Real Estate · All offices licensed under the Real Estate Agents Act 2008</p>
     <p>Privacy Policy · Disclaimer · Anti-Money Laundering</p>
@@ -1504,7 +1487,7 @@ html.js-loaded .reveal-right {
 <div class="concierge-panel" id="concierge-panel">
   <div class="cp-header">
     <div class="cp-avatar">
-      <img src="images/kingsteam_shot.jpg" alt="Terry King" onerror="this.parentElement.innerHTML='<div style=\'width:44px;height:44px;background:var(--mahogany);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:14px;color:var(--gold)\'>K</div>'">
+      <img src="images/terry.png" alt="Terry King" onerror="this.parentElement.innerHTML='<div style=\'width:44px;height:44px;background:var(--mahogany);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:14px;color:var(--gold)\'>K</div>'">
     </div>
     <div class="cp-info">
       <div class="cp-name">Kings Concierge</div>
@@ -1592,15 +1575,22 @@ document.addEventListener('DOMContentLoaded', () => {
   if (input) input.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); sendMessage(); } });
 });
 
-const agentReplies = [
-  "Thank you for your enquiry. Terry would be delighted to arrange a private viewing at your convenience — could you share the best time to reach you, and your contact number?",
-  "That's a wonderful part of Remuera. We have a number of properties in that area on our private register that haven't yet reached the open market. Would you like Terry to contact you directly with details?",
-  "Our register currently has several pre-qualified buyers seeking exactly that type of property. If you're considering selling, we could likely introduce the right buyer without a public listing. Shall we arrange a confidential appraisal?",
-  "Terry has been representing properties in that area for over 40 years — his knowledge of the local market is unmatched. I'd suggest speaking with him directly on 021 484 332, or I can have him call you.",
-  "We work exclusively by price rather than auction, which means our vendors consistently achieve their asking price. Would you like to learn more about our methodology and how it would apply to your property?",
-  "The private register is one of our most valued services. Many of our sales occur without ever reaching the public market. I can add your details confidentially — what areas and price range are you focused on?",
-];
-let replyIndex = 0;
+const SYSTEM_PROMPT = `You are the Kings Concierge for The Kings of Real Estate, Remuera's most trusted luxury property agency founded in 1984 by Terry and Diana King at Kings Arcade, 405 Remuera Road, Remuera, Auckland.
+
+You represent the pinnacle of discretion, knowledge and professionalism in New Zealand real estate.
+
+Key facts:
+- Terry King: Principal & Licensed Agent, 021 484 332, terry@thekings.co.nz, over 40 years in Remuera property
+- Diana King: Associate Principal, 021 613 884, diana@thekings.co.nz
+- Office: (+64 9) 529 0000, info@thekings.co.nz, Mon–Fri 10am–4pm
+- Methodology: Sell By Price (not auction) — we establish true value upfront, attracting qualified buyers
+- Our Register: Curated private buyer database — many sales occur off-market, never publicly listed
+- Featured property: 532 Remuera Road — 5 bed, 7 bath, 8 garage, 2,561sqm, By Negotiation
+- Recent sales: 5 Arney Crescent $3.85M (sold in 2 days, 30% above CV), 65 Lingarth Street $4.95M
+
+Respond in a refined, warm British-inflected professional tone — think Sotheby's meets Remuera. Keep responses to 2–3 sentences. Never be pushy. Always offer to connect with Terry directly. Encourage joining The Register for off-market access.`;
+
+const conversationHistory = [];
 let isTyping = false;
 
 function sendMessage() {
@@ -1615,14 +1605,44 @@ function sendMessage() {
 function sendMessageText(text) {
   if (isTyping) return;
   appendMsg('user', text);
+  conversationHistory.push({ role: 'user', content: text });
   isTyping = true;
   showTyping();
-  setTimeout(() => {
+  callClaude();
+}
+
+async function callClaude() {
+  try {
+    const response = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        model: "claude-sonnet-4-6",
+        max_tokens: 300,
+        system: SYSTEM_PROMPT,
+        messages: conversationHistory
+      })
+    });
+    const data = await response.json();
+    const reply = data.content?.[0]?.text || fallbackReply();
     hideTyping();
-    appendMsg('agent', agentReplies[replyIndex % agentReplies.length]);
-    replyIndex++;
-    isTyping = false;
-  }, 1400 + Math.random() * 600);
+    appendMsg('agent', reply);
+    conversationHistory.push({ role: 'assistant', content: reply });
+  } catch (e) {
+    hideTyping();
+    appendMsg('agent', fallbackReply());
+  }
+  isTyping = false;
+}
+
+function fallbackReply() {
+  const replies = [
+    "Thank you for your enquiry. Terry would be delighted to assist — please call him directly on 021 484 332 or email terry@thekings.co.nz.",
+    "That's a wonderful question. Our private register often has opportunities that never reach the open market — I'd suggest speaking with Terry directly to discuss your requirements.",
+    "We work exclusively by price rather than auction, which consistently delivers exceptional results. Would you like Terry to arrange a confidential appraisal?",
+    "Our register currently has pre-qualified buyers seeking properties in exactly that category. Please call us on (+64 9) 529 0000 to discuss further.",
+  ];
+  return replies[Math.floor(Math.random() * replies.length)];
 }
 
 function appendMsg(role, text) {
@@ -1637,4 +1657,46 @@ function appendMsg(role, text) {
 function showTyping() {
   const msgs = document.getElementById('cp-messages');
   const el = document.createElement('div');
-  el.id = 'cp-typ
+  el.id = 'cp-typing';
+  el.className = 'cp-msg';
+  el.innerHTML = '<div class="cp-msg-bubble cp-typing"><span></span><span></span><span></span></div><div class="cp-msg-time">Kings Concierge · typing...</div>';
+  msgs.appendChild(el);
+  msgs.scrollTo({ top: msgs.scrollHeight, behavior: 'smooth' });
+}
+
+function hideTyping() {
+  const el = document.getElementById('cp-typing');
+  if (el) el.remove();
+}
+
+// ── COUNTER ANIMATION ─────────────────────────────────────────────────────────
+function animateCounter(el) {
+  const target = parseInt(el.dataset.target);
+  const suffix = el.dataset.suffix || '';
+  const duration = 2000;
+  const start = performance.now();
+  const step = (now) => {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.floor(eased * target) + suffix;
+    if (progress < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+const counterObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { animateCounter(e.target); counterObs.unobserve(e.target); } });
+}, { threshold: 0.5 });
+document.querySelectorAll('.counter').forEach(el => counterObs.observe(el));
+
+// ── FEATURED GALLERY ─────────────────────────────────────────────────────────
+function setFeatured(src) {
+  document.querySelector('.featured-main-img').src = src;
+  document.querySelectorAll('.featured-thumb').forEach(t => {
+    const match = t.src === src || t.getAttribute('src') === src;
+    t.style.outline = match ? '2px solid var(--gold)' : 'none';
+    t.style.opacity = match ? '1' : '0.7';
+  });
+}
+</script>
+</body>
+</html>
